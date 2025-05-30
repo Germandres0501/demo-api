@@ -1,20 +1,20 @@
 package edu.sena.demoapi.service;
 
-import edu.sena.demoapi.model.usuario;
-import edu.sena.demoapi.repository.usuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import edu.sena.demoapi.model.Usuario;
+import edu.sena.demoapi.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
-public class usuarioService {
-    @autowired
-    private usuarioRepository usuarioRepository;
+public class UsuarioService {
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
-    public usuario guardarUsuario(usuario usuario) {
-        return usuarioRepository.save(user);
+    public Usuario guardarUsuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
     }
 
-    public usuario obtenerUsuario(Long id) {
+    public Usuario obtenerUsuario(Long id) {
         return usuarioRepository.findById(id).orElse(null);
     }
 }
